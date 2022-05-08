@@ -52,7 +52,7 @@ ___
 ___
 ## 3.版本回退
 ```bash
->$ git reset + 哈希值 --hard
+$ git reset + 哈希值 --hard
 ```
 ![](images/2022-05-07-16-37-13.png)
 
@@ -60,3 +60,32 @@ ___
 ## 4.分支管理
 在一个分支中的commit 都会
 试一试 是否推送到gitee
+
+
+---
+## 使用 git bash 命令行 建立和管理仓库
+>必须 在gitee 上**先有一个仓库** 临时建的 或者之前的都可以
+
+### 方法一 ：
+**在桌面上**```git clone https链接``` 直接得到的直接就是 一个仓库 + 增加删内容 + ```git add .``` + ```git commit -m ""``` + ```git push origin master``` 
+
+
+### 方法二：  
+1.cd项目，执行```git init```，初始化本地仓库
+
+2.给本地仓库关联远程仓库
+
+```git remote add origin https://gitee.com/shiduyule/仓库名.git```
+
+
+3.先更新本地仓库
+
+```git pull origin master```
+
+
+4.推送本地仓库代码到远程仓库
+```bash
+git add .
+git commit -m "第一次提交"
+git push origin master
+```
