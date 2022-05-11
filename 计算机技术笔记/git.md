@@ -133,25 +133,27 @@ $ git pull origin master
 ```bash
 $ git log 显示提交日志
 $ git reflog 显示提交日志
+```
+# 四.termux 上使用git
 
-# termux 上使用git
-
-##  git 配置公钥
+##  1.git 配置公钥
 1. 生成公钥
 ```bash
-ssh-keygen -t rsa -C "git@gitee.com" 
+$ ssh-keygen -t rsa -C "git@gitee.com" 
 ```
 三次直接回车
 2. 查看复制公钥
-
-> cd ~/.ssh
-> cat id_rsa.pub
-
+```bash
+$ cd ~/.ssh
+$ cat id_rsa.pub
+```
 复制到 码云的公钥池之中
 
-## termux + markor
+## 2.termux + markor
 1.  termux 获取存储权限
-> $ termux-setup-storage
-> $ cd /storage/emulated/0/
+```bash  
+$ termux-setup-storage
+$ cd /storage/emulated/0/
+```
 
 2. 在 F-Android 中下载安装 markor
