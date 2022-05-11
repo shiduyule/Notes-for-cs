@@ -63,6 +63,7 @@ $ git reset + 哈希值 --hard
 
 
 ---
+<<<<<<< HEAD
 # 二. 使用 git bash 命令行 建立和管理仓库
 >必须 在gitee 上**先有一个仓库** 临时建的 或者之前的都可以
 
@@ -71,6 +72,16 @@ $ git reset + 哈希值 --hard
 
 
 ## 方法二(容易发生冲突)：  
+=======
+# 使用 git bash 命令行 建立和管理仓库
+>必须 在gitee 上**先有一个仓库** 临时建的 或者之前的都可以
+
+## 方法一 ：
+**在桌面上**```git clone https链接``` 直接得到的直接就是 一个仓库 + 增加删内容 + ```git add .``` + ```git commit -m ""``` + ```git push origin master``` 
+
+
+## 方法二：  
+>>>>>>> fd216f73a6a8c1ce564c06e596aecf8dbc246305
 1.cd项目，执行```git init```，初始化本地仓库
 
 2.给本地仓库关联远程仓库
@@ -85,6 +96,7 @@ $ git reset + 哈希值 --hard
 
 4.推送本地仓库代码到远程仓库
 ```bash
+<<<<<<< HEAD
 $ git add .
 $ git commit -m "第一次提交"
 $ git push origin master
@@ -133,3 +145,31 @@ $ git pull origin master
 ```bash
 $ git log 显示提交日志
 $ git reflog 显示提交日志
+=======
+git add .
+git commit -m "第一次提交"
+git push origin master
+```
+
+# termux 上使用git
+
+##  git 配置公钥
+1. 生成公钥
+```bash
+ssh-keygen -t rsa -C "git@gitee.com" 
+```
+三次直接回车
+2. 查看复制公钥
+
+> cd ~/.ssh
+> cat id_rsa.pub
+
+复制到 码云的公钥池之中
+
+## termux + markor
+1.  termux 获取存储权限
+> $ termux-setup-storage
+> $ cd /storage/emulated/0/
+
+2. 在 F-Android 中下载安装 markor
+>>>>>>> fd216f73a6a8c1ce564c06e596aecf8dbc246305
