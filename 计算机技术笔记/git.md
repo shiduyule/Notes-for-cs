@@ -89,7 +89,7 @@ $ git merge <branch name>
 2.给本地仓库关联远程仓库
 
 ```git remote add origin https://gitee.com/shiduyule/仓库名.git```
-
+**注意：这里的origin是远端名称，可以是其他代号**
 
 3.先更新本地仓库
 
