@@ -147,9 +147,9 @@ $ git pull origin master
 $ git log 显示提交日志
 $ git reflog 显示提交日志
 ```
-# 四.termux 上使用git
+# 四.SSH 协议 + 配置公钥
 
-##  1.git 配置公钥
+##  1.git 配置公钥 链接远端（不用输入密码）
 1. 生成公钥
 ```bash
 $ ssh-keygen -t rsa -C "git@gitee.com" 
@@ -161,6 +161,10 @@ $ cd ~/.ssh
 $ cat id_rsa.pub
 ```
 复制到 码云的公钥池之中
+
+3. **关联远端的url 链接必须是 ssh 形式的** 不能是https
+这就要求 git clone 的时候使用ssh 形式的链接
+或者使用  git remote set-url origin git@gitee.com:shiduyule/test.git 来改动远端链接为ssh 协议
 
 ## 2.termux + markor
 1.  termux 获取存储权限
