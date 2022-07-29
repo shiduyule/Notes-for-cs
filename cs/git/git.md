@@ -147,26 +147,35 @@ $ git pull origin master
 $ git log 显示提交日志
 $ git reflog 显示提交日志
 ```
-# 四.SSH 协议 + 配置公钥
+# 四.SSH 协议 + 生成公钥免密登陆
 
-##  1.git 配置公钥 链接远端（不用输入密码）
-1. 生成公钥
+## git 配置公钥 链接远端（不用输入密码）
+### 1.生成公钥
 ```bash
 $ ssh-keygen -t rsa -C "git@gitee.com" 
 ```
-三次直接回车
-2. 查看复制公钥
+三次直接回车 **切记不要输入密码**
+### 2.查看复制公钥
 ```bash
 $ cd ~/.ssh
 $ cat id_rsa.pub
 ```
-复制到 码云的公钥池之中
-
-3. **关联远端的url 链接必须是 ssh 形式的** 不能是https
+### 3.复制到 码云的公钥池之中
+**关联远端的url 链接必须是 ssh 形式的** 不能是https
 这就要求 git clone 的时候使用ssh 形式的链接
-或者使用  git remote set-url origin git@gitee.com:shiduyule/test.git 来改动远端链接为ssh 协议
+或者使用  
+```bash
+git remote get-url origin 查看远端的链接
+git remote set-url origin git@gitee.com:shiduyule/test.git 修改远端链接
+```
+来改动远端链接为ssh 协议
 
-## 2.termux + markor
+### ps: https和ssh的区别
+**HTTPS**：不管是谁，拿到url随便clone，但是在push的时候需要验证用户名和密码；
+**SSH**：clone的项目你必须是拥有者或者管理员，而且需要在clone前添加SSH Key。
+SSH 在push的时候，是不需要输入用户名的，如果配置SSH key的时候设置了密码，则需要输入密码的，否则直接是不需要输入密码的。
+
+# 五. termux + markor 实现安卓端的笔记查看
 1.  termux 获取存储权限
 ```bash  
 $ termux-setup-storage
