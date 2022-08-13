@@ -1,7 +1,7 @@
 ![](images/2022-05-05-20-47-43.png) 
 
 # 小技巧
-> git commit -a -m "message" 可以直接将工作区到本地版本库
+> git commit -am "message" 可以直接将工作区到本地版本库
 
 # 一.获取git仓库
 通常两种获取 Git 项目仓库的方式：
