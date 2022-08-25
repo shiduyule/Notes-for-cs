@@ -86,25 +86,23 @@ $ git merge <branch name>
 **在桌面上**```git clone https链接``` 直接得到的直接就是 一个仓库 + 增加删内容 + ```git add .``` + ```git commit -m ""``` + ```git push origin master``` 
 
 
-## 方法二(容易发生冲突)：  
+## 方法二(容易发生冲突)(在本地已经初始化的情况下使用)：  
 1.cd项目，执行```git init```，初始化本地仓库
 
 2.给本地仓库关联远程仓库
 
 ```git remote add origin https://gitee.com/shiduyule/仓库名.git```
-**注意：这里的origin是远端名称，可以是其他代号**
-
-3.先更新本地仓库
-
-```git pull origin master```
+**PS ：这里的origin是远端名称，可以是其他代号**
 
 
-4.推送本地仓库代码到远程仓库
-```bash
-$ git add .
-$ git commit -m "第一次提交"
-$ git push origin master
-```
+#### 3.注意此时的本地已经初始化
+##### case1:远端已经初始化
+>```git pull origin master --allow-unrelated-histories```
+
+##### case2:远端还未初始化
+>git remote add origin git@gitee.com:shiduyule/ll.git
+>git push origin master
+
 
 # 三. git 命令细节
 ## 1.git fetch 和 git pull 区别
