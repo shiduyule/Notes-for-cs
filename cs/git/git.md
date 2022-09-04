@@ -183,4 +183,4 @@ $ termux-setup-storage
 $ cd /storage/emulated/0/
 ```
 
-2. 在 F-Android 中下载安装 markor
+2. 在 F-Android 中下载安装 markorg
