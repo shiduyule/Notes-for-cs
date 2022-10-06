@@ -3,7 +3,7 @@
 # 小技巧
 > git commit -am "message" 可以直接将工作区到本地版本库
 
-# 一.获取git仓库
+# 一.本地工作的基本流程
 通常两种获取 Git 项目仓库的方式：
     1. 将尚未进行版本控制的**本地目录**转换为**Git仓库**；
     2. 从其他**服务器**克隆一个已存在的**Git仓库**。
@@ -76,38 +76,46 @@ $ git checkout + <分支名> 切换分支
 2. 合并 (需谨慎)
 ```bash
 $ git merge <branch name>
- 
 ```
 ---
-# 二. 使用 git bash 命令行 建立和管理仓库
+# 二. 关联云端并与之交互
 >必须 在gitee 上**先有一个仓库** 临时建的 或者之前的都可以
 
-## 方法一(推荐) ：
-**在桌面上**```git clone https链接``` 直接得到的直接就是 一个仓库 + 增加删内容 + ```git add .``` + ```git commit -m ""``` + ```git push origin master``` 
+## 方法一(推荐):
+```git clone https``` 
+
+```git clone ssh``` 
+
+增删改动内容
+
+ ```git add .``` 
+```git commit -m ""``` 
+```git push origin master``` 
 
 
 ## 方法二(容易发生冲突)(在本地已经初始化的情况下使用)：  
-1.cd项目，执行```git init```，初始化本地仓库
+ 1.cd项目，执行```git init```，初始化本地仓库
 
-2.给本地仓库关联远程仓库
+ 2.给本地仓库关联远程仓库
 
 ```git remote add origin https://gitee.com/shiduyule/仓库名.git```
 **PS ：这里的origin是远端名称，可以是其他代号**
 
 
-#### 3.注意此时的本地已经初始化
-##### case1:远端已经初始化
->```git pull origin master --allow-unrelated-histories```
+ 3.**注意此时的本地已经初始化**
+case1:远端已经初始化
+```git pull origin master --allow-unrelated-histories```
 
-##### case2:远端还未初始化
+case2:远端还未初始化
 >git remote add origin git@gitee.com:shiduyule/ll.git
 >git push origin master
 
 
 # 三. git 命令细节
-## 1.git fetch 和 git pull 区别
+## 1. git fetch 和 git pull 区别
 Git中从远程的分支获取最新的版本到本地有这样2个命令：
 1. git fetch：相当于是从远程获取最新版本到本地，不会自动merge(合并)
+
 ```bash
 $ git fetch origin master 
 它的意思是从名为 origin 的远程上拉取名为 master 的分支到本地分支origin/master 中。既然是拉取代码，当然需要同时指定远程名与分支名，所以分开写
@@ -115,6 +123,7 @@ $ git log -p master..origin/master
 $ git merge origin/master
 它的意思是合并名为 origin/master的分支到当前所在分支。既然是分支的合并，当然就与远程名没有直接的关系，所以没有出现远程名。需要指定的是被合并的分支。
 ```
+
 以上命令的含义：
 >1.首先从远程的origin的master主分支下载最新的版本到origin/master分支上
 2.然后比较本地的master分支和origin/master分支的差别
