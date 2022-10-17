@@ -49,10 +49,53 @@
 1. list = [1, 1.0, "hello", True]  可变
    tuple = (1, 1.0, "hello", True) 元组是常量不能变
 2. 操作
-    2.1 索引
+     2.1 索引
         list[0] 第一个
         list[-1] 倒数第一
     2.2 切片
-        list[0:-1]
-    2.3
-    
+        list[0:-1] 左闭右开
+    2.3.1 赋值
+        list[0] = 1
+        ps: 这里的赋值具有传递性
+        e.g. 
+        list1 = [1,2]
+        list2 = list
+        list2[0] = 100 之后 list1 也会被改成[100,2]
+    2.3.2 隔离赋值
+        list2 = list1.copy()
+    2.4 追加元素
+        list.append(item)
+    2.5 插入元素
+        list.insert(index,item)
+    2.6 移除元素
+        list.remove(item)
+    2.6 删除元素
+        del list[index]
+    2.7 弹出最后一个元素
+        list.pop()
+    2.8 清空
+        list.clear()
+    2.9 +
+        list3 = list1 + list2
+    2.10 in 用于判断元素是否在列表之内
+        bool = 1 in list1
+```
+
+## dictionary 字典 
+```python
+1. 无序的键值对的集合
+    dict = {key1:value1,key2:value2...}
+2. 操作
+    2.1 获取值
+        item1 = dict[key1]
+    2.2 改变值
+        dict[key1] = item1
+    2.3 增加值
+        dict[new_key] = new_value
+    2.3 移除
+        dict.remove[key]
+        del dict[]
+    2.4 清除
+        dict.clear()
+    2.5 复制
+        dict2 = dict1.copy()
