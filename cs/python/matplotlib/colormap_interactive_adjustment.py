@@ -24,16 +24,15 @@ t = np.linspace(0, 2 * np.pi, 1024)  # t的取值范围是(0,2π) 像素点是10
 b = np.sin(t)[:, np.newaxis]
 data2d = np.sin(t)[:, np.newaxis] * np.cos(t)[np.newaxis, :] # 矩阵化
 
-# =============================================================================
-# print("数据np.sin(t)一个%d维的数组"%np.sin(t).ndim)
-# print(np.sin(t))
-# print('\n')
-# print("数据np.sin(t)[:, np.newaxis]是一个%d维的数组"%np.sin(t)[:, np.newaxis].ndim)   
-# print(np.sin(t)[:, np.newaxis])
-# print('\n')
-# print("数据data2d是一个%d维的数组"%data2d.ndim) 
-# print(data2d)  
-# =============================================================================
+#%%=============================================================================
+print("数据np.sin(t)一个%d维的数组"%np.sin(t).ndim)
+print(np.sin(t))
+print('\n')
+print("数据np.sin(t)[:, np.newaxis]是一个%d维的数组"%np.sin(t)[:, np.newaxis].ndim)   
+print(np.sin(t)[:, np.newaxis])
+print('\n')
+print("数据data2d是一个%d维的数组"%data2d.ndim) 
+print(data2d)  
 
 #%% 创建画布
 fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个子区域

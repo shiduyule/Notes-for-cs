@@ -9,5 +9,3 @@ while frames:
   frames,image = capture.read()
   print ('Read frame number: ', count)
   count += 1
-
-
