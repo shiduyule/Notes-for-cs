@@ -46,4 +46,6 @@ x[np.newaxis, :]  放在前面，会给行上增加维度
 data2d = np.sin(t)[:, np.newaxis] * np.cos(t)[np.newaxis, :]
 data
 ```
-
+## 数组 合并
+```python
+1. array2D = np.array([data1,data2])

@@ -20,11 +20,28 @@ Home/Back/Forward buttons can also be used to get back to a previous state.
 import matplotlib.pyplot as plt  
 import numpy as np
 
-t = np.linspace(0, 2 * np.pi, 1024)  # t的取值范围是(0,2π) 像素点是1024
-b = np.sin(t)[:, np.newaxis]
+t = np.linspace(0, 2 * np.pi, 10000)  # t的取值范围是(0,2π) 像素点是1024
+#b = np.sin(t)[:, np.newaxis]
 data2d = np.sin(t)[:, np.newaxis] * np.cos(t)[np.newaxis, :] # 矩阵化
 
-#%%=============================================================================
+
+# =============================================================================
+# t = np.linspace(0, 2 * np.pi, 100)  # 简单的一维矩阵
+# data2d = np.array([t,-t])  
+# tzuo = t[:, np.newaxis]    # 2D (70,1) 列向量
+# tyou = t[ np.newaxis,:]    # 2D (1,70) 行向量
+# data2d = t[:, np.newaxis] * t[ np.newaxis,:] 
+# =============================================================================
+
+
+
+# =============================================================================
+# data2d = np.array([
+#     [12,3,5,7],
+#     [11,2,4,6],
+#     [10,8,6,7]]) 
+# =============================================================================
+#%%
 print("数据np.sin(t)一个%d维的数组"%np.sin(t).ndim)
 print(np.sin(t))
 print('\n')
