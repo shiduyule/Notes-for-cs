@@ -1,8 +1,8 @@
 ```python
 three control structures
-1. sequence structure 顺序结构
-3. selective 选择结构 condition
-3. cycle  循环结构 loop
+1. sequence structure 顺序结构  正常的代码就是
+3. selective /condition 选择结构 if条件语句
+3. cycle  loop 循环结构 while for
 ```
 
 ```python

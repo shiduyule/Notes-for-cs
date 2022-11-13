@@ -1,4 +1,4 @@
-## 数组维度  和variable窗口的size不一样
+## 数组维度  (和variable窗口的size不一样)
 ```python 
 Numpy.array 同质运算方便  list中不同质  
 维度的判定是中括号的层数
@@ -49,3 +49,66 @@ data
 ## 数组 合并
 ```python
 1. array2D = np.array([data1,data2])
+```
+
+## 数组整体计算
+```python
+def function_theta_strain(x):
+    a0 =   7.363e-05 
+    a1 =  -8.187e-05 
+    b1 =  -2.305e-05 
+    a2 =   7.352e-06 
+    b2 =   1.373e-05 
+    a3 =   9.547e-07 
+    b3 =  -1.768e-06 
+    w =       1.798  
+    S21output =  a0 + a1 * np.cos(x*w) + b1 * np.sin(x*w) + a2 * np.cos(2*x*w) + b2 * np.sin(2*x*w) + a3 * np.cos(3*x*w) + b3 * np.sin(3*x*w)
+    return (S21output)
+
+data2d = function_theta_strain(data2d)
+```
+
+```python
+1. 获取数组的大小
+data2dshape = np.shape (data2d) 这是一个元组
+i = data2dshape[1]   索引
+j = data2dshape[2]
+
+```
+
+
+```python
+随机生成数组
+data2d = np.random.random((1000,1000))
+```
+
+```python
+a = np.array([[1,2,3],[4,5,6],[7,8,9]]) 
+b = np.array([2,5,8])
+# 2代表下标，这里代表插入到第三列，axis=1，插入一列，axis=0，插入一行
+a =np.insert(a, 2, b, axis=1)
+
+#插入多列
+c = np.array([[1,4,7],[2,5,8]]).T
+np.insert(a, [0,1], c, axis=1)
+ 
+输出：
+[[1 2 2 3]
+ [4 5 5 6]
+ [7 8 8 9]]
+ 
+[[1 1 2 2 3]
+ [4 4 5 5 6]
+ [7 7 8 8 9]]
+
+```
+
+```python
+ x = np.empty([3,2], dtype = int) 
+```
+
+
+```python
+数组转置
+t6 = t5.transpose()
+```

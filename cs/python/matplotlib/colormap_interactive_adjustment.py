@@ -20,7 +20,7 @@ Home/Back/Forward buttons can also be used to get back to a previous state.
 import matplotlib.pyplot as plt  
 import numpy as np
 
-t = np.linspace(0, 2 * np.pi, 10000)  # t的取值范围是(0,2π) 像素点是1024
+t = np.linspace(0, 2 * np.pi, 100)  # t的取值范围是(0,2π) 像素点是1024
 #b = np.sin(t)[:, np.newaxis]
 data2d = np.sin(t)[:, np.newaxis] * np.cos(t)[np.newaxis, :] # 矩阵化
 
