@@ -42,7 +42,7 @@ data2d[a,b] = 左闭右开
 ## numpy 生成指定范围内的一组有序的一维数组
 ```python
 t = np.linspace(0, 2 * np.pi, 1024)
-t = np.linspace(起始值，结束值包括，采样数目)
+t = np.linspace(起始值包括在内，结束值包括在内，采样数目=数组长度)  步长 = (end - start)/num-1
 t = np.arange(起始值，结束不包括，步长默认为1)
 ```
 
@@ -95,6 +95,8 @@ a = np.array([[1,2,3],[4,5,6],[7,8,9]])
 b = np.array([2,5,8])
 # 2代表下标，这里代表插入到第三列，axis=1，插入一列，axis=0，插入一行
 a =np.insert(a, 2, b, axis=1)
+# 2代表下标，这里代表插入到第三列，axis=1，axis=0，插入一行
+a =np.insert(a, 2, b, axis=0)
 
 #插入多列
 c = np.array([[1,4,7],[2,5,8]]).T
