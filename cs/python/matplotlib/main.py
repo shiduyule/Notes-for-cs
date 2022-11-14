@@ -34,14 +34,15 @@ j = 0
 i = 0
 density = 10
 insertcolumn = np.empty([np.shape(data2d)[0] ,density], dtype = float) 
+print(insertcolumn)
 # 插入的矩阵行数为data2d的行数  列数为设置的密度值
 while lieshu < 100: # 当列数小于时
     while i < np.shape(data2d)[0]:  # 当行数在总行数范围内
-        insertcolumn[i,:] = np.linspace(data2d[i,j],data2d[i,j+1],density,endpoint = False)[0:density]
+        insertcolumn[i,:] = np.linspace(data2d[i,j],data2d[i,j+1],density,endpoint = False)[0:density] # 以第i行第j列 和第i行第j+1列为起始值   这里是 5行 10列数组
         i = i + 1 
         
     insertcolumn = insertcolumn.transpose()
-    data2d = np.insert(data2d, j,insertcolumn, axis=1) # 插入density列
+    data2d = np.insert(data2d, j+1,insertcolumn, axis=1) # 插入density列
     j = j + 1 + density 
     lieshu = np.shape(data2d)[1]
     break
