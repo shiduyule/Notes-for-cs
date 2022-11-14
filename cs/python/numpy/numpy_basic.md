@@ -31,6 +31,14 @@ a = np.array([
         [22, 23, 24],
         [25, 26, 27]]])
 ```
+
+## numpy 数组的索引
+```python
+data2d[a,b] = 左闭右开
+```
+
+
+
 ## numpy 生成指定范围内的一组有序的一维数组
 ```python
 t = np.linspace(0, 2 * np.pi, 1024)
