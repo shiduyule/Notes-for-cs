@@ -65,8 +65,6 @@ def function_theta_strain(x):
 data2d = function_theta_strain(data2d)
 #%% 创建画布
 fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个
-#%% 创建画布
-#fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个子区域
 im = ax.imshow(data2d)          
 
 #%% 追加图例
