@@ -16,7 +16,7 @@ data2d = np.array([
 [0.2,  0.8,  0.5, -0.3, -0.1,  0.7,  0.0, -0.2,  0.0],
 [0.8,  1.1,  0.9,  1.2,  0.2, -0.2, -0.1,  0.0,  0.0],
 [-0.7, 0.4,  0.5,  0.9,  1.2,  0.0,  0.0,  1.0,  0.0],
-[-0.9, 0.2,  0.3,  0.4,  1.3,  0.1, -0.2,  0.7,  0.6]  ])
+[-0.9, 0.2,  0.3,  0.4,  1.3,  0.1, -0.5,  0.0,  -0.1]  ])
 
 #%% 矩阵转化 利用matlab中 拟合得到的函数
 def function_distance_theta(x):   # x 是形式参数 data2d是实际参数
@@ -88,13 +88,13 @@ while True:
         break
 
 #%% 创建画布
-fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个子区域
-im = ax.imshow(data2d)          
+#fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个子区域
+fig, ax = plt.subplots()
+im = ax.imshow(data2d,cmap = 'jet')          
 
 #%% 追加图例
-ax.set_title('Pan on the colorbar to shift the color mapping\n'
-             'Zoom on the colorbar to scale the color mapping')
+ax.set_title('S21 of 50ppm Cr dopping  σ=0.10 KDP')
 
-fig.colorbar(im, ax=ax, label='Interactive colorbar')  
+fig.colorbar(im, ax=ax, label='S21')  
 
 plt.show()
