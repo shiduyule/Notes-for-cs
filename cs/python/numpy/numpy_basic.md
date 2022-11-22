@@ -1,6 +1,7 @@
-## 数组维度  (和variable窗口的size不一样)
+### 数组维度  (和variable窗口的size不一样)
 ```python 
-Numpy.array 同质运算方便  list中不同质  
+Numpy.array 同质运算方便  
+list中不同质  
 维度的判定是中括号的层数
 
 0. 0D
@@ -32,35 +33,39 @@ a = np.array([
         [25, 26, 27]]])
 ```
 
-## numpy 数组的索引
+
+## 增
 ```python
-data2d[a,b] = 左闭右开
-```
-
-
-
-## numpy 生成指定范围内的一组有序的一维数组
-```python
+生成指定范围内的一组有序的一维数组
 t = np.linspace(0, 2 * np.pi, 1024)
-t = np.linspace(起始值包括在内，结束值包括在内，采样数目=数组长度)  步长 = (end - start)/num-1
+t = np.linspace(起始值包括在内，结束值包括在内，采样数目=数组长度)  
+步长 = (end - start)/num-1
 t = np.arange(起始值，结束不包括，步长默认为1)
 ```
-
-## 数组 升维度
 ```python
+生成空数组
+x = np.empty([3,2], dtype = int) 
+```
+```python
+随机生成数组
+data2d = np.random.random((1000,1000))
+```
+```python
+数组 升维度
 x[:, np.newaxis]  放在后面，会给列上增加维度
 x[np.newaxis, :]  放在前面，会给行上增加维度
 
 data2d = np.sin(t)[:, np.newaxis] * np.cos(t)[np.newaxis, :]
 data
 ```
-## 数组 合并
 ```python
-1. array2D = np.array([data1,data2])
+数组 合并
+array2D = np.array([data1,data2])
 ```
 
-## 数组整体计算
+
 ```python
+数组整体计算
 def function_theta_strain(x):
     a0 =   7.363e-05 
     a1 =  -8.187e-05 
@@ -75,22 +80,20 @@ def function_theta_strain(x):
 
 data2d = function_theta_strain(data2d)
 ```
-
+## 查
 ```python
-1. 获取数组的大小
+1. data2d[a,b] = 左闭右开
+```
+```python
+2. 获取数组的大小
 data2dshape = np.shape (data2d) 这是一个元组
 i = data2dshape[1]   索引
-j = data2dshape[2]
-
+j = data2dshape[2]   
 ```
 
-
+# 改
 ```python
-随机生成数组
-data2d = np.random.random((1000,1000))
-```
-
-```python
+插入数组
 a = np.array([[1,2,3],[4,5,6],[7,8,9]]) 
 b = np.array([2,5,8])
 # 2代表下标，这里代表插入到第三列，axis=1，插入一列，axis=0，插入一行
@@ -112,13 +115,10 @@ np.insert(a, [0,1], c, axis=1)
  [7 7 8 8 9]]
 
 ```
-
-```python
- x = np.empty([3,2], dtype = int) 
-```
-
-
 ```python
 数组转置
 t6 = t5.transpose()
 ```
+
+
+
