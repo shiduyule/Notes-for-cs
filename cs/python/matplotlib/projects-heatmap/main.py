@@ -88,8 +88,13 @@ while True:
         break
 
 #%% 创建画布
-fig, ax = plt.subplots(facecolor='#F5F5EB')  # 等价于 plt.subplots(1,1) 创建画布fig 和一个子区域
-im = ax.imshow(data2d)          
+fig, ax = plt.subplots(facecolor='#F5F5EB')  
+# 创建一个画布，把这个画布赋值给变量fig
+
+# 同时在这个画布上创建了一个axes，把这个axes赋值给ax
+
+# 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
+im = ax.imshow(data2d,origin='lower')          
 
 #%% 坐标轴 标题 图例
 plt.xlabel('Size (cm)')
@@ -98,10 +103,10 @@ plt.ylabel('Size (cm)')
 new_ticks1 = np.linspace(0,809,10)
 new_ticksx = np.linspace(0,4.4,10)
 new_ticksy = np.linspace(0,4.2,10)
-new_ticksx = np.round(new_ticksx,2)
-new_ticksy = np.round(new_ticksy,2)
-plt.xticks(new_ticks1,new_ticksx)
-plt.yticks(new_ticks1,new_ticksy) 
+new_ticksx = np.round(new_ticksx,1)
+new_ticksy = np.round(new_ticksy,1)
+ax.xaxis.set_ticks(new_ticks1,new_ticksx)
+ax.yaxis.set_ticks(new_ticks1,new_ticksy) 
 
 ax.set_title('Pan on the colorbar to shift the color mapping\n'
              'Zoom on the colorbar to scale the color mapping')

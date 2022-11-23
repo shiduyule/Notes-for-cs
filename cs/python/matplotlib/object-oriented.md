@@ -8,14 +8,14 @@ A = np.arange(1,5)
 B = A**2
 C = A**3
 ```
-
+### 创建画布
 ```python
 fig, ax = plt.subplots(figsize=(14,7))  
 # fig, ax = plt.subplots(2,1,figsize(14,7))
 # ax[0].***
 # ax[1].***
 ```
-### 创建画布
+
 ```python
 
 创建一个大小为（14，7）的画布，把这个画布赋值给变量fig
@@ -29,7 +29,31 @@ ax[0]就对应第一个subplot的ax
 ```
 ### 作图
 ```python
-ax.plot(A,B)
-ax.plot(B,A)
+ax.plot(A,B) 折线图
+
 ```
 
+### axes 
+```python
+ax.set_title('title context') 
+标题
+ax.set_xlabel('xlabel', fontsize=18,fontfamily = 'sans-serif',
+fontstyle='italic')
+x 轴标签
+ax.set_ylabel('ylabel', fontsize='x-large',fontstyle='oblique')
+y 轴标签
+ax.legend()
+图例
+```
+
+### axis 
+```python
+ax.xaxis.set_tick_params(rotation=45,labelsize=18,colors='w') 
+
+start, end = ax.get_xlim() 
+
+ax.xaxis.set_ticks(np.arange(start, end,1)) 
+
+ax.yaxis.tick_right()
+
+```
