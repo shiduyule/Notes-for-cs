@@ -88,7 +88,8 @@ while True:
         break
 
 #%% 创建画布
-fig, ax = plt.subplots(facecolor='#F5F5EB')  
+fig, ax = plt.subplots(facecolor='#F5F5EB',figsize = (10,10))
+  
 # 创建一个画布，把这个画布赋值给变量fig
 
 # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
@@ -111,6 +112,6 @@ ax.yaxis.set_ticks(new_ticks1,new_ticksy)
 ax.set_title('Pan on the colorbar to shift the color mapping\n'
              'Zoom on the colorbar to scale the color mapping')
 
-fig.colorbar(im, ax=ax, label='Interactive colorbar')  
-
+fig.colorbar(im, ax=ax, label='Interactive colorbar',fraction=0.046, pad=0.04)  
+# plt.savefig(‘heatmap.svg’) # 保存图片 
 plt.show()
