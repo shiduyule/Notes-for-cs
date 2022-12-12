@@ -1,8 +1,12 @@
-### 数组维度  (和variable窗口的size不一样)
+### 数组格式
+##### 数组维度 a.ndim 中括号的层数决定
+##### 数组行数和列数 np.shape(data2d) (variable窗口的size)
 ```python 
 Numpy.array 同质运算方便  
-list中不同质  
+list中 数据的类型可以不一样  
 维度的判定是中括号的层数
+
+创建 numpy 数组 务必使用 np.array() 来声明变量类型 
 
 0. 0D
 a = np.array(1)  # 圆括号内部是a的真实值 array = 数组
@@ -12,7 +16,7 @@ a = [1]
 a = np.array([1,2,3]) 
 a.ndim  　#　数组维度  
 
-2. 2D 
+2. 2D  注意：数组的行数和列数可以不等 
 a = np.array([
     [12,3,5,7],
     [11,2,4,6],
