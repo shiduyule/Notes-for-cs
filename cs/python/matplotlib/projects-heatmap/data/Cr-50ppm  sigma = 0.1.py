@@ -94,7 +94,7 @@ fig, ax = plt.subplots(facecolor= '#F5F5EB',figsize =(10,10))
 # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
 
 # 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
-im = ax.imshow(data2d,origin='lower')  
+im = ax.imshow(data2d,origin='lower',cmap = 'jet')  
 
 
 #%% 追加图例

@@ -18,6 +18,7 @@ def enhanceresolution(data2d,width,height):
     # [0.8,  1.1,  0.9,  1.2,  0.2, -0.2, -0.1,  0.0,  0.0],
     # [-0.7, 0.4,  0.5,  0.9,  1.2,  0.0,  0.0,  1.0,  0.0],
     # [-0.9, 0.2,  0.3,  0.4,  1.3,  0.1, -0.2,  0.7,  0.6]  ])
+    
     data2d = data2d[::-1]
     
     #%% 矩阵转化 利用matlab中 拟合得到的函数
@@ -46,7 +47,7 @@ def enhanceresolution(data2d,width,height):
                 else:
                     x = -1 * x
                     fitfunction =  a0 + a1 * np.cos(x*w) + b1 * np.sin(x*w) + a2 * np.cos(2*x*w) + b2 * np.sin(2*x*w) + a3 * np.cos(3*x*w) + b3 * np.sin(3*x*w)
-                    data2d[i,j] = -1 * fitfunction
+                    data2d[i,j] = 1 * fitfunction
         return (data2d)
     data2d = function_distance_theta(data2d)
     data2d = function_theta_strain(data2d)
@@ -97,21 +98,21 @@ def enhanceresolution(data2d,width,height):
     # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
     
     # 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
-    im = ax.imshow(data2d,origin='lower')          
+    im = ax.imshow(data2d,origin='lower',cmap = 'jet')   #          
     
     #%% 坐标轴 标题 图例
     plt.xlabel('Size (cm)')
     plt.ylabel('Size (cm)')
     
-    new_ticks1 = np.linspace(0,809,10)
-    new_ticksx = np.linspace(0,width,10)
-    new_ticksy = np.linspace(0,height,10)
-    new_ticksx = np.round(new_ticksx,1)
-    new_ticksy = np.round(new_ticksy,1)
-    ax.xaxis.set_ticks(new_ticks1,new_ticksx)
-    ax.yaxis.set_ticks(new_ticks1,new_ticksy) 
+    # new_ticks1 = np.linspace(0,809,10)
+    # new_ticksx = np.linspace(0,width,10)
+    # new_ticksy = np.linspace(0,height,10)
+    # new_ticksx = np.round(new_ticksx,1)
+    # new_ticksy = np.round(new_ticksy,1)
+    # ax.xaxis.set_ticks(new_ticks1,new_ticksx)
+    # ax.yaxis.set_ticks(new_ticks1,new_ticksy) 
     
-    ax.set_title('S21 of 50ppm Cr dopping  σ=0.10 KDP')
+    ax.set_title('S21 of σ=0.12 KDP')
     
     fig.colorbar(im, ax=ax, label='S21',fraction=0.046, pad=0.04)  
     # plt.savefig(‘heatmap.svg’) # 保存图片 
