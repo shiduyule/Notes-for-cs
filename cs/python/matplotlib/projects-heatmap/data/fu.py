@@ -47,7 +47,7 @@ def enhanceresolution(data2d,width,height):
                 else:
                     x = -1 * x
                     fitfunction =  a0 + a1 * np.cos(x*w) + b1 * np.sin(x*w) + a2 * np.cos(2*x*w) + b2 * np.sin(2*x*w) + a3 * np.cos(3*x*w) + b3 * np.sin(3*x*w)
-                    data2d[i,j] = 1 * fitfunction
+                    data2d[i,j] = -1 * fitfunction
         return (data2d)
     data2d = function_distance_theta(data2d)
     data2d = function_theta_strain(data2d)
@@ -58,7 +58,7 @@ def enhanceresolution(data2d,width,height):
     #=============================================================================
     #%%扩充列数  设置density 即可
     j = 0
-    density = 100  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
+    density = 50  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
     while True: 
         insertcolumn = np.empty([np.shape(data2d)[0] ,density], dtype = float)
         i = 0
