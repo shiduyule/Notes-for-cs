@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-def enhanceresolution(data2d,width,height):
+def enhanceresolution(data2d,width,height,title):
     #%% 导入模块 import modules
     import matplotlib.pyplot as plt  
     import numpy as np
+    from numpy import mean, sqrt, square
+    
     #%% 矩阵输入 matrix input
     # =============================================================================
     # 利用numpy中的二维数组作为容器  首先手动输入光轴倾角的数据  10 * 10 
@@ -51,14 +53,17 @@ def enhanceresolution(data2d,width,height):
         return (data2d)
     data2d = function_distance_theta(data2d)
     data2d = function_theta_strain(data2d)
-
+    print(title)
+    print('rms = %e'%sqrt(mean(square(data2d))))
+    print('avg = %e'%mean(data2d))
+    
     #%% 矩阵扩充  matrix expand 至少扩充到 100 * 100
     benzhenghangshu = np.shape(data2d)[0]  #行数  
     benzhenglieshu = np.shape(data2d)[1]  #列数
     #=============================================================================
     #%%扩充列数  设置density 即可
     j = 0
-    density = 50  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
+    density = 80  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
     while True: 
         insertcolumn = np.empty([np.shape(data2d)[0] ,density], dtype = float)
         i = 0
@@ -77,6 +82,7 @@ def enhanceresolution(data2d,width,height):
     #%%扩充行数
     i = 0
     # 插入的矩阵行数为data2d的行数  列数为设置的密度值
+    density = int((height * density)/width)
     while True:
         insertline = np.empty([density,np.shape(data2d)[1]], dtype = float)
         j = 0   # 从第1列开始
@@ -104,17 +110,39 @@ def enhanceresolution(data2d,width,height):
     plt.xlabel('Size (cm)')
     plt.ylabel('Size (cm)')
     
-    # new_ticks1 = np.linspace(0,809,10)
-    # new_ticksx = np.linspace(0,width,10)
-    # new_ticksy = np.linspace(0,height,10)
-    # new_ticksx = np.round(new_ticksx,1)
-    # new_ticksy = np.round(new_ticksy,1)
-    # ax.xaxis.set_ticks(new_ticks1,new_ticksx)
-    # ax.yaxis.set_ticks(new_ticks1,new_ticksy) 
+    old_ticksx = np.linspace(0,np.shape(data2d)[1],10)
+    old_ticksy = np.linspace(0,np.shape(data2d)[0],10)
+
+    new_ticksx = np.linspace(0,width,10)  #  对新的轴设定范围
+    new_ticksy = np.linspace(0,height,10)
+    new_ticksx = np.round(new_ticksx,1)  #   对新的轴坐标取小数点后一位
+    new_ticksy = np.round(new_ticksy,1)
+    ax.xaxis.set_ticks(old_ticksx,new_ticksx)
+    ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
     
-    ax.set_title('S21 of σ=0.12 KDP')
+    ax.set_title('S21 of %s KDP'%(title))
     
     fig.colorbar(im, ax=ax, label='S21',fraction=0.046, pad=0.04)  
     # plt.savefig(‘heatmap.svg’) # 保存图片 
     plt.show()
     return (data2d)
+# A1 4cm 3.5cm
+# A2 3.8cm  4.2cm
+# A3  4cm   4cm
+# A4  4.5cm  4.4cm
+# A5  4.4cm  3.8cm
+# A6  4.6cm  4.3cm
+
+# σ = 0.08 
+# B1 4.8 4.2   Cr:10 ppm
+# B2 4.3 4.4   Cr:20 ppm
+# B3 4.5 4.5   Cr:30 ppm
+# B4 4.05 4.2  Cr:40 ppm
+# B5 4.2 3.8   Cr:5 ppm
+
+# B0 4.5 4.5 Cr:10ppm
+# B6 4.6 4.5 Cr:50ppm
+
+
+# C3  6.3cm  4cm
+# 有裂纹的晶体结构应力  待测

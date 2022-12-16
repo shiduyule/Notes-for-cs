@@ -3,7 +3,7 @@
 from fu import enhanceresolution as er
 import numpy as np
 
-print(np.around(np.linspace(0,145,18)))
+#print(np.around(np.linspace(0,145,18)))
 data2d = np.array([
 #0.    8.5   17.1  25.6  34.1  42.6  51.2  59.7     8.2  16.8  25.3  33.8  42.4  50.9  59.4    7.9  16.5  25
 
@@ -31,4 +31,4 @@ data2d = np.array([
 
 data2d = 1.414 * data2d 
 #%% 
-data2d = er(data2d,4.4,4.2)
+data2d = er(data2d,4.4,3.8,'σ = 0.12')
