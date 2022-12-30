@@ -97,7 +97,7 @@ def enhanceresolution(data2d,width,height,title):
             break
     
     #%% 创建画布
-    fig, ax = plt.subplots(facecolor='#F5F5EB',figsize = (10,10))
+    fig, ax = plt.subplots(figsize = (10,10))#facecolor='#F5F5EB',
       
     # 创建一个画布，把这个画布赋值给变量fig
     
