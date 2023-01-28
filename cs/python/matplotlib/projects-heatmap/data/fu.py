@@ -49,7 +49,7 @@ def enhanceresolution(data2d,width,height,title):
                 else:
                     x = -1 * x
                     fitfunction =  a0 + a1 * np.cos(x*w) + b1 * np.sin(x*w) + a2 * np.cos(2*x*w) + b2 * np.sin(2*x*w) + a3 * np.cos(3*x*w) + b3 * np.sin(3*x*w)
-                    data2d[i,j] = 1 * fitfunction
+                    data2d[i,j] = 1 * fitfunction    # 区分左旋 右旋的时候加上负号 算平均值的时候不加负号
         return (data2d)
     data2d = function_distance_theta(data2d)
     data2d = function_theta_strain(data2d)
@@ -126,7 +126,7 @@ def enhanceresolution(data2d,width,height,title):
     # plt.savefig(‘heatmap.svg’) # 保存图片 
     plt.show()
     return (data2d)
-# A1 4cm 3.5cm
+    # A1 4cm 3.5cm
 # A2 3.8cm  4.2cm
 # A3  4cm   4cm
 # A4  4.5cm  4.4cm
