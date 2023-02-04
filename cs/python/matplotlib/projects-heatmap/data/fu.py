@@ -49,7 +49,7 @@ def enhanceresolution(data2d,width,height,title):
                 else:
                     x = -1 * x
                     fitfunction =  a0 + a1 * np.cos(x*w) + b1 * np.sin(x*w) + a2 * np.cos(2*x*w) + b2 * np.sin(2*x*w) + a3 * np.cos(3*x*w) + b3 * np.sin(3*x*w)
-                    data2d[i,j] = 1 * fitfunction    # 区分左旋 右旋的时候加上负号 算平均值的时候不加负号
+                    data2d[i,j] = 1 * fitfunction    # 区分左旋 右旋的时候加上负号 算平均值的时候不加负号 同时导致了正负不分中间的零点被忽略
         return (data2d)
     data2d = function_distance_theta(data2d)
     data2d = function_theta_strain(data2d)
@@ -142,7 +142,6 @@ def enhanceresolution(data2d,width,height,title):
 
 # B0 4.5 4.5 Cr:10ppm
 # B6 4.6 4.5 Cr:50ppm
-
 
 # C3  6.3cm  4cm
 # 有裂纹的晶体结构应力  待测
