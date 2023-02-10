@@ -95,8 +95,11 @@ clear=False,
 ```
 ## 热图的设定
 
+
 ### 面向对象的语法
 ```python
 fig,axes = plt.subplots(2,1,figsize = (6,6))
 axes[0].bar()
+
+
 ```

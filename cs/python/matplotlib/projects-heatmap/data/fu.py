@@ -4,13 +4,13 @@ def enhanceresolution(data2d,width,height,title):
     import matplotlib.pyplot as plt  
     import numpy as np
     from numpy import mean, sqrt, square
-    
+    data2d = data2d[::-1]  # 考虑到 imshow 函数的 从下往上画 
     #%% 矩阵输入 matrix input
     # =============================================================================
     # 利用numpy中的二维数组作为容器  首先手动输入光轴倾角的数据  10 * 10 
     # =============================================================================
     # data2d = np.array([
-
+        
     # [-1,  -0.8, -0.1,  0.2,  1.1,  1.2,  1.1,  0.2, -0.9 ],
     # [-0.3, 0.1,  0.1, -0.1,  0.5, 1.25, 1.15, 0.25,  0.1],
     # [-0.2,-0.1,  0.1,    0,  1.0,  1.5,  0.2,  0.3,  0.4],
@@ -21,7 +21,7 @@ def enhanceresolution(data2d,width,height,title):
     # [-0.7, 0.4,  0.5,  0.9,  1.2,  0.0,  0.0,  1.0,  0.0],
     # [-0.9, 0.2,  0.3,  0.4,  1.3,  0.1, -0.2,  0.7,  0.6]  ])
     
-    data2d = data2d[::-1]
+    
     
     #%% 矩阵转化 利用matlab中 拟合得到的函数
     def function_distance_theta(x):   # x 是形式参数 data2d是实际参数
@@ -97,7 +97,7 @@ def enhanceresolution(data2d,width,height,title):
             break
     
     #%% 创建画布
-    fig, ax = plt.subplots(figsize = (10,10))#facecolor='#F5F5EB',
+    fig, ax = plt.subplots(figsize = (5.4,4),dpi = 600)#facecolor='#F5F5EB',
       
     # 创建一个画布，把这个画布赋值给变量fig
     
@@ -107,8 +107,8 @@ def enhanceresolution(data2d,width,height,title):
     im = ax.imshow(data2d,origin='lower',cmap = 'jet')   #          
     
     #%% 坐标轴 标题 图例
-    plt.xlabel('Size (cm)')
-    plt.ylabel('Size (cm)')
+    plt.xlabel('Size (cm)',fontdict={"family": "Times New Roman"})
+    plt.ylabel('Size (cm)',fontdict={"family": "Times New Roman"})
     
     old_ticksx = np.linspace(0,np.shape(data2d)[1],10)
     old_ticksy = np.linspace(0,np.shape(data2d)[0],10)
@@ -120,10 +120,11 @@ def enhanceresolution(data2d,width,height,title):
     ax.xaxis.set_ticks(old_ticksx,new_ticksx)
     ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
     
-    ax.set_title('S21 of %s KDP'%(title))
+    ax.set_title('shear stress of %s sample   '%(title))
     
-    fig.colorbar(im, ax=ax, label='S21',fraction=0.046, pad=0.04)  
-    # plt.savefig(‘heatmap.svg’) # 保存图片 
+    fig.colorbar(im, ax=ax, label=r'$\sigma_{21}$',fraction=0.046, pad=0.04)  
+    plt.savefig('F:\----KDP-Data----\shear stress\%s.png'%(title)) # 保存图片 
+    plt.rc('font', family='Times New Roman', size=13)
     plt.show()
     return (data2d)
     # A1 4cm 3.5cm
@@ -134,11 +135,13 @@ def enhanceresolution(data2d,width,height,title):
 # A6  4.6cm  4.3cm
 
 # σ = 0.08 
+
+# 先按照晶体记号笔标记的来
 # B1 4.8 4.2   Cr:10 ppm
 # B2 4.3 4.4   Cr:20 ppm
 # B3 4.5 4.5   Cr:30 ppm
 # B4 4.05 4.2  Cr:40 ppm
-# B5 4.2 3.8   Cr:5 ppm
+# B5 4.2 3.8   Cr:5 ppm   边角 ： D 1
 
 # B0 4.5 4.5 Cr:10ppm
 # B6 4.6 4.5 Cr:50ppm

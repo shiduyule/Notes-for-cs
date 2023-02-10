@@ -61,4 +61,4 @@ data2d = np.array([
 ])
 
 data2d =  0.1414 * data2d
-data2d = er(data2d,4.0,3.5,'σ = 0.04')
+data2d = er(data2d,4.0,3.5,'A1')
