@@ -5,20 +5,30 @@ Created on Fri Feb 10 19:57:45 2023
 @author: shiduyule
 """
 
-import numpy as np
+#import numpy as np
+import linecache
+filename = ('1-M.txt')
+line = 343
+newline = 0
+data = []
+while True:
+    if line >= 1391179:
+        break
+    data.append(linecache.getline(filename,line ))
+    line += 593
 
-filename = '1-M.txt'
-newlist = np.array([])
-with open(filename, 'r') as file:  #  打开txt文件 将它赋值给file
-    counts = 343
-    newline =  1
-    while True:
-        line = file.readline(counts)
-        #print (line)
-        newlist[newline] = line 
-        counts =  counts + 593
-        newline =  newline + 1
-        if counts >= 1391179:
-            break
-        
+
+
+
+for foo in data:
+    #if foo[0] == 'ID' and foo[1] == "46": #条件
+        with open('newfile.txt', 'w') as fp:　  
+            # 'a'表示写的时候不覆盖原先内容，追加模式
+            fp.write(foo[]) #读取指定内容
+            fp.write('\n')
+       
+        with open('./file2.txt', 'a') as fp:
+            fp.write(foo[7]) #读取指定内容
+            fp.write('\n')
+
  #  line = file.readline() # file.readline()会读取文件的第一行生成字符串类型的变量
