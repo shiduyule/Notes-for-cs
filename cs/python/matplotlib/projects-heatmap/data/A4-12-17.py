@@ -40,4 +40,4 @@ data2d = np.array([
 -0.2,   0,    0,    0,   0 ] ])#                                                                                                     右下角数据缺失
 
 data2d =  0.1414 * data2d 
-data2d = er(data2d,4.5,4.4,'σ = 0.10')
+data2d = er(data2d,4.5,4.4,'A4')

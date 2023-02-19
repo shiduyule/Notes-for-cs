@@ -37,5 +37,3 @@ b: 二进制类型
 
 
 encoding：打开文件所用的编码，可选，str类型，默认为None。encoding参数仅可在采用文本方式（即mode值带t）读写数据的情况下有效，二进制方式下不可指定。文本编码有很多，常用的有utf-8、ascii、gbk等。mode参数采用文本方式的情况下，若encoding指定为None，则编码为locale.getpreferredencoding(False)这行代码的返回值。在Windows下，这行代码一般返回值为cp936,。cp936指的就是gbk
-
-

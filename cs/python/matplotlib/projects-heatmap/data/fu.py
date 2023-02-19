@@ -120,9 +120,9 @@ def enhanceresolution(data2d,width,height,title):
     ax.xaxis.set_ticks(old_ticksx,new_ticksx)
     ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
     
-    ax.set_title('shear stress of %s sample   '%(title))
+    #ax.set_title('shear strain of sample %s'%(title))
     
-    fig.colorbar(im, ax=ax, label=r'$\sigma_{21}$',fraction=0.046, pad=0.04)  
+    fig.colorbar(im, ax=ax, label=r'$S_{21}$',fraction=0.046, pad=0.04)  
     plt.savefig('F:\----KDP-Data----\shear stress\%s.png'%(title)) # 保存图片 
     plt.rc('font', family='Times New Roman', size=13)
     plt.show()
