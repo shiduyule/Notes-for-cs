@@ -5,17 +5,16 @@ Created on Fri Feb 10 19:57:45 2023
 @author: shiduyule
 """
 
-import re  #     返回string中所有与pattern匹配的全部字符串,返回形式为数组
+# import re  #     返回string中所有与pattern匹配的全部字符串,返回形式为数组
 import linecache
 filename = ('1-M.txt')
 line = 343   #  输入 行数 周期
-newline = 0
 data = []   
 while True:
-    if line >= 1391179:
+    if line >= 663366:
         break
-    data.append(linecache.getline(filename,line ))
-    line += 593
+    data.append(linecache.getline(filename,line))
+    line += 593   #  输入 周期
 
 
 
