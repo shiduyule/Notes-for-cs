@@ -1,4 +1,3 @@
-```c
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <cmath>
@@ -8,26 +7,26 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    // è¯»å–å›¾åƒ
+    // ¶ÁÈ¡Í¼Ïñ
     Mat image = imread(argv[1]);
 
-    // å°†å›¾åƒè½¬æ¢ä¸ºç°åº¦å›¾åƒ
+    // ½«Í¼Ïñ×ª»»Îª»Ò¶ÈÍ¼Ïñ
     Mat gray;
     cvtColor(image, gray, COLOR_BGR2GRAY);
 
-    // å¯¹ç°åº¦å›¾åƒè¿›è¡ŒäºŒå€¼åŒ–å¤„ç†
+    // ¶Ô»Ò¶ÈÍ¼Ïñ½øĞĞ¶şÖµ»¯´¦Àí
     Mat binary;
     threshold(gray, binary, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
 
-    // å¯¹äºŒå€¼åŒ–å›¾åƒè¿›è¡Œè¾¹ç¼˜æ£€æµ‹
+    // ¶Ô¶şÖµ»¯Í¼Ïñ½øĞĞ±ßÔµ¼ì²â
     Mat edges;
     Canny(binary, edges, 50, 150, 3);
 
-    // å¯¹è¾¹ç¼˜å›¾åƒè¿›è¡Œéœå¤«å˜æ¢
+    // ¶Ô±ßÔµÍ¼Ïñ½øĞĞ»ô·ò±ä»»
     vector<Vec2f> lines;
     HoughLines(edges, lines, 1, CV_PI / 180, 100);
 
-    // é€‰æ‹©ç¬¦åˆæ¡ä»¶çš„çº¿æ®µ
+    // Ñ¡Ôñ·ûºÏÌõ¼şµÄÏß¶Î
     Vec2f line;
     for (size_t i = 0; i < lines.size(); i++) {
         float rho = lines[i][0];
@@ -38,7 +37,7 @@ int main(int argc, char** argv)
         }
     }
 
-    // è®¡ç®—çº¿æ®µçš„ä¸¤ä¸ªç«¯ç‚¹
+    // ¼ÆËãÏß¶ÎµÄÁ½¸ö¶Ëµã
     double a = cos(line[1]);
     double b = sin(line[1]);
     double x0 = a * line[0];
@@ -46,10 +45,9 @@ int main(int argc, char** argv)
     Point2d p1(x0 + 1000 * (-b), y0 + 1000 * a);
     Point2d p2(x0 - 1000 * (-b), y0 - 1000 * a);
 
-    // è®¡ç®—çº¿æ®µä¸¤ç«¯ç‚¹ä¹‹é—´çš„è·ç¦»
+    // ¼ÆËãÏß¶ÎÁ½¶ËµãÖ®¼äµÄ¾àÀë
     double distance = sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
     cout << "Distance between two endpoints of the hyperbola: " << distance << endl;
 
     return 0;
 }
-```

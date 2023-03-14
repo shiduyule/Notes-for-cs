@@ -16,12 +16,12 @@ if
 
 ```python
 2.1 while
-    2.1.1 定义
+    2.1.1 当遍历超出condition时 中断
     while condition：
         block
         change used to stop loop
     
-    2.1.2 中断
+    2.1.2 使用条件语句进行中断  这里依然可以实现遍历
     break + continue
         if condition:
             break 全局中断
@@ -67,5 +67,8 @@ with 语句作为try/finally 编码范式的一种替代,
 ```python
  with open(file, "w") as f:
         f.write("hello python")
+
+open 方法的返回值赋值给变量 f，当离开 with 代码块的时候，
+系统会自动调用 f.close() 方法， 
+with 的作用和使用 try/finally 语句是一样的
 ```
-open 方法的返回值赋值给变量 f，当离开 with 代码块的时候，系统会自动调用 f.close() 方法， with 的作用和使用 try/finally 语句是一样的

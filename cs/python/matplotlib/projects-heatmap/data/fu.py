@@ -20,9 +20,7 @@ def enhanceresolution(data2d,width,height,title):
     # [0.8,  1.1,  0.9,  1.2,  0.2, -0.2, -0.1,  0.0,  0.0],
     # [-0.7, 0.4,  0.5,  0.9,  1.2,  0.0,  0.0,  1.0,  0.0],
     # [-0.9, 0.2,  0.3,  0.4,  1.3,  0.1, -0.2,  0.7,  0.6]  ])
-    
-    
-    
+        
     #%% 矩阵转化 利用matlab中 拟合得到的函数
     def function_distance_theta(x):   # x 是形式参数 data2d是实际参数
         y = 81
@@ -63,7 +61,7 @@ def enhanceresolution(data2d,width,height,title):
     #=============================================================================
     #%%扩充列数  设置density 即可
     j = 0
-    density = 100  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
+    density = 50  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
     while True: 
         insertcolumn = np.empty([np.shape(data2d)[0] ,density], dtype = float)
         i = 0
@@ -97,14 +95,14 @@ def enhanceresolution(data2d,width,height,title):
             break
     
     #%% 创建画布
-    fig, ax = plt.subplots(figsize = (5.4,4),dpi = 600)#facecolor='#F5F5EB',
+    fig, ax = plt.subplots(figsize = (5.4,4),dpi = 600) # facecolor='#F5F5EB',
       
     # 创建一个画布，把这个画布赋值给变量fig
     
     # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
     
     # 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
-    im = ax.imshow(data2d,origin='lower',cmap = 'jet')   #          
+    im = ax.imshow(data2d,origin='lower' ,cmap = 'jet'  )   #       
     
     #%% 坐标轴 标题 图例
     plt.xlabel('Size (cm)',fontdict={"family": "Times New Roman"})
@@ -137,14 +135,18 @@ def enhanceresolution(data2d,width,height,title):
 # σ = 0.08 
 
 # 先按照晶体记号笔标记的来
-# B1 4.8 4.2   Cr:10 ppm
+#  这里 的尺寸 已经是 先是横行  后是纵行
+# B5 4.2 3.8   Cr:5 ppm   边角 ： D 1
+# B1 4.8 4.2   Cr:10 ppm       # B0 4.5 4.5 Cr:10ppm   这个是过饱和 10的结果
 # B2 4.3 4.4   Cr:20 ppm
 # B3 4.5 4.5   Cr:30 ppm
 # B4 4.05 4.2  Cr:40 ppm
-# B5 4.2 3.8   Cr:5 ppm   边角 ： D 1
-
-# B0 4.5 4.5 Cr:10ppm
 # B6 4.6 4.5 Cr:50ppm
 
-# C3  6.3cm  4cm
+# 传统法 C3  6.3cm  4cm    过饱和度 0.01
 # 有裂纹的晶体结构应力  待测
+
+
+# 不同 长宽比
+
+
