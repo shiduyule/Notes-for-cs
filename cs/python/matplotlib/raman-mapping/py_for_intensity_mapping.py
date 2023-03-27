@@ -110,7 +110,7 @@ fig.colorbar(im, ax=ax, label='intensity')  # ,fraction=0.046, pad=0.04
 plt.savefig('F:\\02-28\\%s.png'%(filename)) # 保存图片 
 plt.rc('font', family='Times New Roman')  # , size=13
 plt.show()
-#np.savetxt('F:/data2d.txt', data2d)
+# np.savetxt('F:/data2d.txt', data2d)
 
 '''
 #for foo in data:

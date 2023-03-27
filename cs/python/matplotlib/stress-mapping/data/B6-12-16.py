@@ -47,5 +47,5 @@ data2d = np.array([
 
 ])#                                                                                                     右下角数据缺失
 
-data2d =  0.01414 * data2d 
-data2d = er(data2d,4.6,4.5,'B4')
+data2d =  0.1414 * data2d   #  变为以厘米为单位  和之后的81cm 相同单位
+data2d = er(data2d,4.6,4.5,'B6')

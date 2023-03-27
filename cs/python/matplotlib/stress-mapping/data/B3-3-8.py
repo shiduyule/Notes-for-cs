@@ -40,5 +40,5 @@ data2d = np.array([
 [0,  0,   0,  0,    2,    3,     3,     3,    3,      0,   -3,   -4,  -5, -4,  -1,  0,    2,   4,    3,     2]
 ])#                                                                                                     右下角数据缺失
 
-data2d =  0.01414 * data2d 
-data2d = er(data2d,4.5,4.5,'B3')
+data2d =  0.1414 * data2d 
+data2d = er(data2d,4.5,4.5,'B4')

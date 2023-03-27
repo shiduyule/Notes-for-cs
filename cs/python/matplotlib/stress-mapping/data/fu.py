@@ -118,7 +118,7 @@ def enhanceresolution(data2d,width,height,title):
     ax.xaxis.set_ticks(old_ticksx,new_ticksx)
     ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
     
-    #ax.set_title('shear strain of sample %s'%(title))
+    ax.set_title('shear strain of sample %s'%(title))
     
     fig.colorbar(im, ax=ax, label=r'$S_{21}$',fraction=0.046, pad=0.04)  
     plt.savefig('F:\----KDP-Data----\shear stress\%s.png'%(title)) # 保存图片 
@@ -137,7 +137,7 @@ def enhanceresolution(data2d,width,height,title):
 # 先按照晶体记号笔标记的来
 #  这里 的尺寸 已经是 先是横行  后是纵行
 # B5 4.2 3.8   Cr:5 ppm   边角 ： D 1
-# B1 4.8 4.2   Cr:10 ppm       # B0 4.5 4.5 Cr:10ppm   这个是过饱和 10的结果
+# B1 4.8 4.2   Cr:10 ppm  关于ppm 存疑         # B0 4.5 4.5 Cr:10ppm   这个是过饱和 10 的结果
 # B2 4.3 4.4   Cr:20 ppm
 # B3 4.5 4.5   Cr:30 ppm
 # B4 4.05 4.2  Cr:40 ppm
