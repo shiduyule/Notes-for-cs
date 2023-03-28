@@ -122,6 +122,10 @@ np.insert(a, [0,1], c, axis=1)
 ```python
 数组转置
 t6 = t5.transpose()
+二维数组  行翻转
+data2d = data2d[::-1]
+二维数组  列翻转
+arr = np.fliplr(arr)
 ```
 
 
