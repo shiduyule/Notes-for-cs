@@ -117,18 +117,28 @@ im = ax.imshow(data2d,origin='lower' ,cmap = 'jet')
 #%% 坐标轴 标题 图例
 # ax.set_title('mapping of raman intensity of  %s'%(filename))
 fig.colorbar(im, ax=ax, label='intensity')  # ,fraction=0.046, pad=0.04
+
+
+old_ticksx = np.linspace(0,np.shape(data2d)[1],10)
+old_ticksy = np.linspace(0,np.shape(data2d)[0],10)
+
+new_ticksx = np.linspace(0,5,10)  #  对新的轴设定范围
+new_ticksy = np.linspace(0,4.4,10)
+new_ticksx = np.round(new_ticksx,1)  #   对新的轴坐标取小数点后一位
+new_ticksy = np.round(new_ticksy,1)
+ax.xaxis.set_ticks(old_ticksx,new_ticksx)
+ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
+plt.xlabel('Size (cm)',fontdict={"family": "Times New Roman"})
+plt.ylabel('Size (cm)',fontdict={"family": "Times New Roman"})
+
+
+
+
 plt.savefig('F:\\02-28\\%s.png'%(filename)) # 保存图片 
 plt.rc('font', family='Times New Roman')  # , size=13
+
 plt.show()
+
+
 # np.savetxt('F:/data2d.txt', data2d)
 
-'''
-#for foo in data:
-    #if foo[0] == 'ID' and foo[1] == "46": #条件
-with open('newfile.txt','a') as f:   # 'w'表示写的时候不覆盖原先内容，追加模式　  
-    
-    f.write(str(data)) #读取指定内容
-            #fp.write('\n')
- #  line = file.readline() # file.readline()会读取文件的第一行生成字符串类型的变量
- 
-'''
