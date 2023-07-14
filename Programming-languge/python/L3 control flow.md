@@ -35,6 +35,22 @@ if
     2.2.2 do it with for
         for x in list:
             print(x)
+    
+
+   for i in range()就是python中的循环语句
+
+    有以下三种常见用法：
+
+　　1、range(3)　　[0,3)即0,1,2
+
+　　2、range(1,3)　 [1,3)即1,2
+
+　　3、range(1,5,2)  [1,5)范围内每次增加2，即1,3
+
+　　　　　　　　　　1+2=3，3+2=5（不包含）
+
+　　　　第三个参数表示步长step
+
 ```
 
 

@@ -1,10 +1,10 @@
 # Lecture 1.2 different programming languages   不同的编程语言
-## assembly languages    汇编
-- are more human readable compared to binary instructions for CPU       比二进制更加易读
+## assembly languages 
+- are more human readable compared to binary instructions for CPU
 ## C 1969~1972
 ## C++ 1979
 - as an extension of the programming language
-- C with classes       具有类的编程语言
+- C with classes
 - Now it is C++++++++++++
 ## java  1995
 - i hate memory management in C/C++, java use automatic memory management  

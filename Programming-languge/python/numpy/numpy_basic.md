@@ -86,7 +86,7 @@ data2d = function_theta_strain(data2d)
 ```
 ## 查
 ```python
-1. data2d[a,b] = 左闭右开
+1. data2d[a,b] = 左闭右开  
 ```
 ```python
 2. 获取数组的大小
