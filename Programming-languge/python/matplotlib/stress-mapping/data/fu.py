@@ -61,7 +61,7 @@ def enhanceresolution(data2d,width,height,title):
     #=============================================================================
     #%%扩充列数  设置density 即可
     j = 0
-    density = 50  # 插入的矩阵行数为data2d的行数  列数为设置的密度值
+    density = 2   # 插入的矩阵行数为data2d的行数  列数为设置的密度值  # 2  20
     while True: 
         insertcolumn = np.empty([np.shape(data2d)[0] ,density], dtype = float)
         i = 0
@@ -80,7 +80,7 @@ def enhanceresolution(data2d,width,height,title):
     #%%扩充行数
     i = 0
     # 插入的矩阵行数为data2d的行数  列数为设置的密度值
-    density = int((height * density)/width)
+    density =  int((height * density)/width)
     while True:
         insertline = np.empty([density,np.shape(data2d)[1]], dtype = float)
         j = 0   # 从第1列开始
@@ -102,7 +102,7 @@ def enhanceresolution(data2d,width,height,title):
     # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
     
     # 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
-    im = ax.imshow(data2d,origin='lower' ,cmap = 'jet'  )   #       
+    im = ax.imshow(data2d,origin='lower' ,cmap = 'gray')   #       jet  viridis
     
     #%% 坐标轴 标题 图例
     plt.xlabel('Size (cm)',fontdict={"family": "Times New Roman"})
@@ -118,7 +118,7 @@ def enhanceresolution(data2d,width,height,title):
     ax.xaxis.set_ticks(old_ticksx,new_ticksx)
     ax.yaxis.set_ticks(old_ticksy,new_ticksy) 
     
-    ax.set_title('shear strain of sample %s'%(title))
+    #ax.set_title('shear strain of sample %s'%(title))
     
     fig.colorbar(im, ax=ax, label=r'$S_{21}$',fraction=0.046, pad=0.04)  
     # plt.savefig('F:\----KDP-Data----\shear stress\%s.png'%(title)) # 保存图片 
