@@ -12,20 +12,20 @@ rm -r + 文件夹   递归删除文件夹
 rm -rf /*  递归强制删除根目录以下的所有文件
 ```
 #### 三. 查询
-#####ls(list)查询文件夹下属文件信息
+##### ls(list)查询文件夹下属文件信息
 ```bash
 ls -a 列出所有文件
 ls -l 列出文件权限 所有者 文件大小 
 ls -al 列出所有文件 文件权限 文件大小   
 ls + 文件夹 列出指定文件夹下的文件
 ```
-#####cd(change directory)切换路径
+##### cd(change directory)切换路径
 ```bash
 cd / 到系统根目录
 cd ~ 到用户目录下
 cd - 回到上一次 cd 的目录
 ```
-#####cat(catenate)  查看连接/文件内容
+##### cat(catenate)  查看连接/文件内容
 ```bash
 cat > 1.txt 新建文件并且立即编辑它 ctrl + C 退出
 ```
