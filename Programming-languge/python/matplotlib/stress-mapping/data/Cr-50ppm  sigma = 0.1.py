@@ -2,6 +2,9 @@
 #%% 导入模块 import modules
 import matplotlib.pyplot as plt  
 import numpy as np
+import matplotlib.pyplot as plt
+
+
 #%% 矩阵输入 matrix input
 # =============================================================================
 # 利用numpy中的二维数组作为容器  首先手动输入光轴倾角的数据  10 * 10 
@@ -88,13 +91,13 @@ while True:
         break
 
 #%% 创建画布
-fig, ax = plt.subplots(facecolor= '#F5F5EB',figsize =(10,10)) 
+fig, ax = plt.subplots(figsize =(10,10)) # facecolor= '#F5F5EB'
 # 创建一个画布，把这个画布赋值给变量fig
 
 # 同时在这个画布上创建了一个axes，把这个axes赋值给ax
 
 # 所有未来的fig.xxx都是对这个画布的操作，所有ax.xxx都是对这个axes的操作
-im = ax.imshow(data2d,origin='lower',cmap = 'jet')  
+im = ax.imshow(data2d,origin='lower')  #,cmap = 'jet'
 
 
 #%% 追加图例
@@ -114,4 +117,5 @@ ax.set_title('S21 of 50ppm Cr dopping  σ=0.10 KDP')
 
 fig.colorbar(im, ax=ax, label='S21',fraction=0.046, pad=0.04)  
 #plt.savefig(‘heatmap.svg’)
+plt.rcParams.update({'font.size': 10})
 plt.show()
