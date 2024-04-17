@@ -86,10 +86,13 @@ data2d = function_theta_strain(data2d)
 ```
 ## 查
 ```python
-1. data2d[a,b] = 左闭右开  
+1. data1d[a,b] = 左闭右开  
+2. 二维数组的切片
+  data2d[:,0]  索引第一列  对于二维数组使用逗号
+
 ```
 ```python
-2. 获取数组的大小
+3. 获取数组的大小
 data2dshape = np.shape (data2d) 这是一个元组
 i = data2dshape[1]   索引
 j = data2dshape[2]   
