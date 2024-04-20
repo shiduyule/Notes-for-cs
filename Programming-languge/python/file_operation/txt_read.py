@@ -10,11 +10,11 @@ import linecache
 filename = ('1-M.txt')
 line = 343   #  输入 行数 周期
 data = []   
-while True:
-    if line >= 663366:
-        break
-    data.append(linecache.getline(filename,line))
-    line += 593   #  输入 周期
+    while True:  # 开启一个无限循环
+        if line >= 663366:
+            break
+        data.append(linecache.getline(filename,line))
+        line += 593   #  输入 周期
 
 
 
