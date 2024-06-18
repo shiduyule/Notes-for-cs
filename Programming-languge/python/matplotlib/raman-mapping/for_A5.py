@@ -13,6 +13,7 @@ Created on Fri Feb 10 19:57:45 2023
 import linecache
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter
 filename = ('A5.txt')
 line = 343            # 输入第一个峰值对应的行数直接输入看到的行数就行  可以有偏差
 density = 5           # 插入的矩阵行数为data2d的行数  列数为设置的密度值
@@ -61,13 +62,14 @@ while i  <= yfanwei - 1:  #  当 i 小于 行数总值时
 
 #%%   行 翻转
 data2d = data2d[::-1]
+data2d = data2d / 4
 # data2d = np.fliplr(data2d)  
 
 
 #data2d = data2d.transpose()
 
 filename= filename.rstrip('.txt')
-np.savetxt('F:\\02-28\\%s-%dhang-%dlie.txt'%(filename,np.shape(data2d)[0],np.shape(data2d)[1]),data2d)
+# np.savetxt('F:\\02-28\\%s-%dhang-%dlie.txt'%(filename,np.shape(data2d)[0],np.shape(data2d)[1]),data2d)
 
 
 
@@ -111,19 +113,26 @@ while True:
         break
 #%% 创建画布
 fig, ax = plt.subplots(figsize = (5.4,4.0),dpi = 600)#facecolor='#F5F5EB',  
-im = ax.imshow(data2d,origin='lower' ,cmap = 'jet')   
+im = ax.imshow(data2d,origin='lower' ,cmap = 'nipy_spectral')   
 # ,cmap = 'nipy_spectral'    cmap = 'gist_ncar' 
 
 #%% 坐标轴 标题 图例
 # ax.set_title('mapping of raman intensity of  %s'%(filename))
-fig.colorbar(im, ax=ax, label='intensity')  # ,fraction=0.046, pad=0.04
+# fig.colorbar(im, ax=ax, label='intensity')  # ,fraction=0.046, pad=0.04
+cbar = fig.colorbar(im, ax=ax, label='intensity')
+cbar.formatter.set_powerlimits((0, 0))
+cbar.ax.yaxis.set_offset_position('left')
+cbar.update_ticks()
 
 
-old_ticksx = np.linspace(0,np.shape(data2d)[1],10)
-old_ticksy = np.linspace(0,np.shape(data2d)[0],10)
 
-new_ticksx = np.linspace(0,5,10)  #  对新的轴设定范围
-new_ticksy = np.linspace(0,4.4,10)
+
+
+old_ticksx = np.linspace(0,np.shape(data2d)[1],6)
+old_ticksy = np.linspace(0,np.shape(data2d)[0],6)
+
+new_ticksx = np.linspace(0,5,6)  #  对新的轴设定范围
+new_ticksy = np.linspace(0,4.4,6)
 new_ticksx = np.round(new_ticksx,1)  #   对新的轴坐标取小数点后一位
 new_ticksy = np.round(new_ticksy,1)
 ax.xaxis.set_ticks(old_ticksx,new_ticksx)
@@ -134,8 +143,8 @@ plt.ylabel('Size (cm)',fontdict={"family": "Times New Roman"})
 
 
 
-plt.savefig('F:\\02-28\\%s.png'%(filename)) # 保存图片 
-plt.rc('font', family='Times New Roman')  # , size=13
+# plt.savefig('F:\\02-28\\%s.png'%(filename)) # 保存图片 
+plt.rc('font', family='Times New Roman', size= 18)  # , size=13
 
 plt.show()
 
