@@ -159,6 +159,13 @@ $ git reflog 显示提交日志
 ```
 # 四.SSH 协议 + 生成公钥免密登陆
 
+## git commit 时候 必须提供作者邮箱
+```bash
+$ git config --global user.email "shiduyule@163.com"
+$ git config --global user.name "shiduyule"
+```
+
+
 ## git 配置公钥 链接远端（不用输入密码）
 ### 1.生成公钥
 ```bash

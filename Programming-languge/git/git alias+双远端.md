@@ -6,10 +6,10 @@
 ```bash
 alias -p 查看 所有 别名设置
 
-vim ~/.bash_profile
+vim ~ash_profile
 输入
 alias gs='git status'
-alias gd='git add .'
+alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 alias gpt='git push gitee; git push github'
