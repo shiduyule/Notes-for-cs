@@ -3,6 +3,7 @@
 # 小技巧
 > git commit -am "message" 可以直接将工作区到本地版本库
 
+> git config --global core.quotepath false    支持中文
 # 一.本地工作的基本流程
 通常两种获取 Git 项目仓库的方式：
     1. 将尚未进行版本控制的**本地目录**转换为**Git仓库**；
