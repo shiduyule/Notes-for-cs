@@ -1,12 +1,16 @@
 ## git alias  设置缩写的别名
 
+正常显示中文
+```bash
+git config --global core.quotepath false
+```
 ### 1. （推荐） 在 git bash 中 直接使用 alias  
 
 
 ```bash
 alias -p 查看 所有 别名设置
 
-vim ~ash_profile
+vim ~/.bash_profile
 输入
 alias gs='git status'
 alias ga='git add .'
@@ -23,6 +27,7 @@ code .git/config
 增加 remote github
 ```
 ![](images/2024-01-18-17-25-21.png)
+
 
 
 
