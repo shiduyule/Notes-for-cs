@@ -18,7 +18,8 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gpt='git push gitee; git push github'
 
-source ~/.bash_profile  相当于刷新一下 似乎重启一下也可以
+source ~/.bash_profile  相当于刷新一下 似乎重启一下也可以   
+使用这个指令 用于重新加载 bash 配置 当你修改了 .bash_profile 文件后，无需重启终端即可立即生效
 ```
 #### 增加第二个远端：
 ```bash
