@@ -1,0 +1,16 @@
+客户端版本：(10.0.26100.6899)x64
+本地 OS：Windows 10 Enterprise x64 (10.0，内部版本 26100)
+
+[Network details]
+传输协议：UDP
+往返时间：5 ms
+可用带宽：大于 345 Mbps
+帧速率：0FPS
+
+[Remote computer details]
+远程会话类型：远程桌面
+网关名称：没有在使用中
+网关登录方法：没有在使用中
+远程计算机：172.22.238.218
+
+按 Ctrl + C 进行复制。
